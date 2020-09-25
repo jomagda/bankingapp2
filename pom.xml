@@ -61,4 +61,26 @@
          <version>2.11.2</version>
      </dependency>
   </dependencies>
+  
+  	<build>
+	  <extensions>
+	    <extension>
+	      <groupId>com.github.platform-team</groupId>
+	      <artifactId>aws-maven</artifactId>
+	      <version>6.0.0</version>
+	    </extension>
+	  </extensions>
+	</build>
+	
+	<distributionManagement>
+	  <snapshotRepository>
+	    <id>bankingapp-artifact</id>
+	    <url>s3://bankingapp-artifact/target/</url>
+	  </snapshotRepository>
+	  <repository>
+	    <id>bankingapp-artifact</id>
+	    <url>s3://bankingapp-artifact/target/release</url>
+	  </repository>
+	</distributionManagement>
+	
 </project>
