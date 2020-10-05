@@ -33,7 +33,7 @@ public class FrontController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getMethod().equals("GET")){
 			ObjectMapper mapper = new ObjectMapper();
-			response.setContentType("application/json");
+			response.setContentType("text/html");
 			response.getOutputStream()
 				.write(mapper.writeValueAsBytes(RequestHelper.processGet(request, response)));
 		}else if(request.getMethod().equals("POST")){

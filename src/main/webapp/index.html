@@ -56,7 +56,7 @@
         <label for="inputEmail" class="sr-only">Username</label>
         <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Username"  autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" >
+        <input type="text" name="password" id="inputPassword" class="form-control" placeholder="Password" >
         <div class="checkbox">
         
           <label>
@@ -181,7 +181,36 @@
     </div>
   </div>
 </footer>
+<script type="text/javascript">
+function getRequests(){
+    let url = 'http://localhost:8081/BankingApp2/FrontController'
+    let xhr = new XMLHttpRequest(); //READY STATE IS 0
+    //preparing to manipulate our orderedlist (DOM manipulation)
+    let un = document.getElementById('inputEmail')
+    let pw = document.getElementById('inputPassword')
+
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState===4 && xhr.status===200){
+            let list = JSON.parse(xhr.responseText) //jokes is a JS object
+            console.log(list)
+            un.innerHTML = xhr.responseText
+            un.value = xhr.responseText
+        }
+    }
+    
+    xhr.open('GET', url) //READY STATE IS 1
+    xhr.send() //READY STATE IS 2
+}
+
+</script>
+<script type="text/javascript">
+window.onload = function() {
+    console.log('window loads?')
+    getRequests();
+}
+    </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 </html>

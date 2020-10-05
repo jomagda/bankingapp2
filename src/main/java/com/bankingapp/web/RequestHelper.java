@@ -8,14 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bankingapp.service.CustomerService;
 
-public class RequestHelper {
+public class RequestHelper{
 
 	public static Object processGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		System.out.println("helper");
-		boolean bool = new CustomerService().validateEmail("bogum@mail.com");
-		System.out.println("email available " + bool);
-		return "testing get";
+		//boolean bool = new CustomerService().validateEmail("bogum@mail.com");
+		//System.out.println("email available " + bool);
+		String u = System.getenv("portfoliodatabaseusername");
+		String p = System.getenv("portfoliodatabasepassword");
+		String r = "testing get db env variables: " + u + " " + p;
+		return r;
 	}
 	
 	public static Object processPost(HttpServletRequest request, HttpServletResponse response) 
@@ -26,4 +29,5 @@ public class RequestHelper {
 		response.sendRedirect("../index.html");
 		return "testing post";
 	}
+
 }
