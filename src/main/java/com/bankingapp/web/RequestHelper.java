@@ -15,8 +15,10 @@ public class RequestHelper{
 		System.out.println("helper");
 		//boolean bool = new CustomerService().validateEmail("bogum@mail.com");
 		//System.out.println("email available " + bool);
-		String u = System.getenv("portfoliodatabaseusername");
-		String p = System.getenv("portfoliodatabasepassword");
+//		String u = System.getenv("portfoliodatabaseusername");
+//		String p = System.getenv("portfoliodatabasepassword");
+		String u = System.getProperty("portfoliodatabaseusername");
+		String p = System.getProperty("portfoliodatabasepassword");
 		String c = System.getenv("CATALINA_HOME");
 		String r = "testing get db env variables: " + u + " " + p + " " + c;
 		return r;
