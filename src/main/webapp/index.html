@@ -191,9 +191,9 @@ function getRequests(){
 
     xhr.onreadystatechange = function(){
         if(xhr.readyState===4 && xhr.status===200){
-            let list = JSON.parse(xhr.responseText) //jokes is a JS object
-            console.log(list)
-            un.innerHTML = xhr.responseText
+            //let list = JSON.parse(xhr.responseText) 
+            //console.log(list)
+            console.log(xhr.responseText)
             un.value = xhr.responseText
         }
     }
