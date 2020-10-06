@@ -15,13 +15,14 @@ public class RequestHelper{
 		System.out.println("helper");
 		//boolean bool = new CustomerService().validateEmail("bogum@mail.com");
 		//System.out.println("email available " + bool);
-//		String u = System.getenv("portfoliodatabaseusername");
-//		String p = System.getenv("portfoliodatabasepassword");
+		String u1 = System.getenv("portfoliodatabaseusername");
+		String p1 = System.getenv("portfoliodatabasepassword");
 		String u = System.getProperty("portfoliodatabaseusername");
 		String p = System.getProperty("portfoliodatabasepassword");
 		String c = System.getenv("CATALINA_HOME");
+		String r1 = "testing get db env variables: " + u1 + " " + p1 + " " + c;
 		String r = "testing get db env variables: " + u + " " + p + " " + c;
-		return r;
+		return r1 + " " r;
 	}
 	
 	public static Object processPost(HttpServletRequest request, HttpServletResponse response) 
