@@ -22,7 +22,7 @@ public class RequestHelper{
 		String c = System.getenv("CATALINA_HOME");
 		String r1 = "testing get db env variables: " + u1 + " " + p1 + " " + c;
 		String r = "testing get db env variables: " + u + " " + p + " " + c;
-		return r1 + " " r;
+		return r1 + " " + r;
 	}
 	
 	public static Object processPost(HttpServletRequest request, HttpServletResponse response) 
