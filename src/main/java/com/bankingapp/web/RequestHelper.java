@@ -19,7 +19,7 @@ public class RequestHelper{
 		String p1 = System.getenv("portfoliodatabasepassword");
 		String u = System.getProperty("portfoliodatabaseusername");
 		String p = System.getProperty("portfoliodatabasepassword");
-		String c = System.getenv("CATALINA_HOME");
+		String c = System.getenv("foo");
 		String r1 = "testing get db env variables: " + u1 + " " + p1 + " " + c;
 		String r = "testing get db env variables: " + u + " " + p + " " + c;
 		return r1 + " " + r;
