@@ -17,7 +17,8 @@ public class RequestHelper{
 		//System.out.println("email available " + bool);
 		String u = System.getenv("portfoliodatabaseusername");
 		String p = System.getenv("portfoliodatabasepassword");
-		String r = "testing get db env variables: " + u + " " + p;
+		String c = System.getenv("CATALINA_HOME");
+		String r = "testing get db env variables: " + u + " " + p + " " + c;
 		return r;
 	}
 	
