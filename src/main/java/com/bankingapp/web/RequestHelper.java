@@ -1,6 +1,11 @@
 package com.bankingapp.web;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +27,12 @@ public class RequestHelper{
 		String c = System.getenv("foo");
 		String r1 = "testing get db env variables: " + u1 + " " + p1 + " " + c;
 		String r = "testing get db env variables: " + u + " " + p + " " + c;
-		return r1 + " " + r;
+		
+		String filename = "/home/ec2-user/credentials.txt";
+		Path path = Paths.get(filename);
+		byte[] bytes = Files.readAllBytes(path);
+		List<String> creds = Files.readAllLines(path, StandardCharsets.UTF_8);
+		return creds.toString();
 	}
 	
 	public static Object processPost(HttpServletRequest request, HttpServletResponse response) 
