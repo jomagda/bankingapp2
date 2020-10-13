@@ -32,7 +32,7 @@ public class RequestHelper{
 //		Path path = Paths.get(filename);
 //		byte[] bytes = Files.readAllBytes(path);
 //		List<String> creds = Files.readAllLines(path, StandardCharsets.UTF_8);
-		return System.getenv("HOME");
+		return System.getenv("BUILD_ID");
 	}
 	
 	public static Object processPost(HttpServletRequest request, HttpServletResponse response) 
