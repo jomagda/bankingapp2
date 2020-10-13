@@ -32,7 +32,7 @@ public class RequestHelper{
 		Path path = Paths.get(filename);
 		byte[] bytes = Files.readAllBytes(path);
 		List<String> creds = Files.readAllLines(path, StandardCharsets.UTF_8);
-		return creds.toString() + " " + System.getenv("testEnv");
+		return System.getenv("testEnv");
 	}
 	
 	public static Object processPost(HttpServletRequest request, HttpServletResponse response) 
