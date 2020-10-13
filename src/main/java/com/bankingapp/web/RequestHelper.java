@@ -28,11 +28,11 @@ public class RequestHelper{
 		String r1 = "testing get db env variables: " + u1 + " " + p1 + " " + c;
 		String r = "testing get db env variables: " + u + " " + p + " " + c;
 		
-		String filename = "/home/ec2-user/CredentialsFolder/credentials.txt";
+		String filename = "/home/ec2-user/.jenkins/CredentialsFolder/credentials.txt";
 		Path path = Paths.get(filename);
 		byte[] bytes = Files.readAllBytes(path);
 		List<String> creds = Files.readAllLines(path, StandardCharsets.UTF_8);
-		return creds.toString();
+		return creds.toString() + " " + System.getenv("testEnv");
 	}
 	
 	public static Object processPost(HttpServletRequest request, HttpServletResponse response) 

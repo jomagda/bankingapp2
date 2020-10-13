@@ -15,7 +15,7 @@ public abstract class DatabaseConnection {
 	private String databaseURL = System.getenv("portfoliodburl");
 	private String databaseUsername = System.getenv("portfoliodatabaseusername");
 	private String databasePassword = System.getenv("portfoliodatabasepassword");
-	private String filename = "/home/ec2-user/CredentialsFolder/credentials.txt";
+	private String filename = "/home/ec2-user/.jenkins/CredentialsFolder/credentials.txt";
 	private Path path = Paths.get(filename);
 	private List<String> creds;
 	
